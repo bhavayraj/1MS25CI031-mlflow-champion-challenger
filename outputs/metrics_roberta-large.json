@@ -1,0 +1,10 @@
+{
+  "accuracy": 0.935,
+  "macro_f1": 0.934408,
+  "precision_macro": 0.937094,
+  "recall_macro": 0.932921,
+  "avg_latency_ms": 113.542377,
+  "total_inference_s": 22.708475,
+  "model_params_millions": 355.361794,
+  "num_errors": 13
+}

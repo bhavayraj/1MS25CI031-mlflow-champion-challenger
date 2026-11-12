@@ -1,0 +1,18 @@
+$ python predict_from_mlflow.py --alias challenger
+Model URI          : models:/sentiment-model@challenger
+Registered version : 1
+Hugging Face model : distilbert-base-uncased-finetuned-sst-2-english
+Source run         : A_sentiment_distilbert-sst2 (run_id 0af947838a3e47ea9e4b39f2f49edd8c)
+
+                                                      text prediction  score expected
+The hostel mess finally served hot food today and it was a   POSITIVE 0.9995 POSITIVE
+The Wi-Fi in the library kept disconnecting during my onli   NEGATIVE 0.9980 NEGATIVE
+Our lab instructor explained MLflow so clearly that everyt   POSITIVE 0.9979 POSITIVE
+I waited forty minutes for the college bus and it never ca   NEGATIVE 0.9997 NEGATIVE
+The new laptop boots in seconds and the battery lasts the    NEGATIVE 0.9806 POSITIVE
+The movie had a great cast but the story was boring and fa   NEGATIVE 0.9997 NEGATIVE
+I was nervous about the viva but the examiner was kind and   POSITIVE 0.9993 POSITIVE
+The delivery app charged me twice and support has not repl   NEGATIVE 0.9965 NEGATIVE
+
+7/8 predictions match the label I expected
+Saved outputs/new_data_predictions_challenger.csv

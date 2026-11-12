@@ -1,0 +1,18 @@
+$ python predict_from_mlflow.py
+Model URI          : models:/sentiment-model@champion
+Registered version : 2
+Hugging Face model : siebert/sentiment-roberta-large-english
+Source run         : B_sentiment_roberta-large (run_id 71e423d5fde34ab385446b287457f738)
+
+                                                      text prediction  score expected
+The hostel mess finally served hot food today and it was a   POSITIVE 0.9961 POSITIVE
+The Wi-Fi in the library kept disconnecting during my onli   NEGATIVE 0.9995 NEGATIVE
+Our lab instructor explained MLflow so clearly that everyt   POSITIVE 0.9988 POSITIVE
+I waited forty minutes for the college bus and it never ca   NEGATIVE 0.9995 NEGATIVE
+The new laptop boots in seconds and the battery lasts the    POSITIVE 0.9988 POSITIVE
+The movie had a great cast but the story was boring and fa   NEGATIVE 0.9995 NEGATIVE
+I was nervous about the viva but the examiner was kind and   POSITIVE 0.9987 POSITIVE
+The delivery app charged me twice and support has not repl   NEGATIVE 0.9995 NEGATIVE
+
+8/8 predictions match the label I expected
+Saved outputs/new_data_predictions.csv

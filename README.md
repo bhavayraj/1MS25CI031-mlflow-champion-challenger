@@ -56,13 +56,57 @@ The decision is logged in the `compare_sentiment` run as the parameters `primary
 ## 4. Results
 
 <!-- RESULTS_START -->
-_Filled in by `write_report.py` after `evaluate.py` has run._
+Run on cpu (Intel64 Family 6 Model 191 Stepping 2, GenuineIntel) with transformers=4.57.6, torch=2.15.0+cpu, mlflow=3.18.0. All numbers are on the same 200 sentences in `data/eval_inputs.csv`.
+
+| Metric | A – Champion (distilbert-sst2) | B – Challenger (roberta-large) | B − A |
+|---|---|---|---|
+| Accuracy (%) ↑ | 91.50 | 93.50 | +2.00 |
+| **Macro-F1 (%) ↑ – primary** | **91.41** | **93.44** | **+2.04** |
+| Macro precision (%) ↑ | 91.83 | 93.71 | +1.88 |
+| Macro recall (%) ↑ | 91.21 | 93.29 | +2.08 |
+| Wrong predictions (of 200) ↓ | 17 | 13 | -4 |
+| Avg latency (ms / sentence) ↓ | 7.7 | 113.5 | × 14.68 |
+| Total inference time (s) ↓ | 1.55 | 22.71 | +21.16 |
+| Parameters (millions) ↓ | 67 | 355 | × 5.3 |
+
+The two models disagree on 16 of the 200 sentences. On those, only A is right 6 times and only B is right 10 times (exact McNemar test, p = 0.455).
+
+![Comparison of the two models](outputs/comparison_bar_chart.png)
+
+| Confusion matrix – Model A | Confusion matrix – Model B |
+|---|---|
+| ![A](outputs/confusion_matrix_distilbert-sst2.png) | ![B](outputs/confusion_matrix_roberta-large.png) |
+
+![Confidence distribution](outputs/confidence_histogram.png)
+
+**Five sentences where the models disagree** (full list in `outputs/disagreements_all.csv`):
+
+| SST-2 idx | Sentence | Reference | A | B | Comment |
+|---|---|---|---|---|---|
+| 243 | the film tunes into a grief that could lead a man across centuries . | POSITIVE | NEGATIVE (0.96) | POSITIVE (1.00) | Only B is right; A gave NEGATIVE with confidence 0.96 |
+| 683 | true tale of courage -- and complicity -- at auschwitz is a harrowing drama that tries ... | POSITIVE | NEGATIVE (0.69) | POSITIVE (1.00) | Only B is right; A gave NEGATIVE with confidence 0.69 |
+| 312 | i 'll bet the video game is a lot more fun than the film . | NEGATIVE | POSITIVE (1.00) | NEGATIVE (1.00) | Only B is right; A gave POSITIVE with confidence 1.00 |
+| 646 | the longer the movie goes , the worse it gets , but it 's actually pretty good in the f... | NEGATIVE | POSITIVE (1.00) | NEGATIVE (1.00) | Only B is right; A gave POSITIVE with confidence 1.00 |
+| 865 | mcconaughey 's fun to watch , the dragons are okay , not much fire in the script . | POSITIVE | POSITIVE (0.71) | NEGATIVE (1.00) | Only A is right; B gave NEGATIVE with confidence 1.00 |
+
+**Prediction on new data with the Champion** (`outputs/new_data_predictions.csv`):
+
+![predict_from_mlflow.py output](screenshots/3_predict_from_mlflow_output.png)
+
+**MLflow screenshots**
+
+![Compare view](screenshots/1_mlflow_compare_view.png)
+
+![Registry aliases](screenshots/2_registry_aliases.png)
+
 <!-- RESULTS_END -->
 
 ## 5. Decision
 
 <!-- DECISION_START -->
-_Filled in after the evaluation run._
+**Champion: Model B (roberta-large).** The Challenger improves macro-F1 from 91.41% to 93.44%, a gain of 2.04 points, which is above my 2-point margin, and its average latency of 113.5 ms per sentence is within the 250 ms guardrail. Under the rule fixed before the run, it replaces the Champion.
+
+With only 200 sentences each sentence is worth 0.5 points, and the models disagree on 16 of them (6 won by A, 10 by B). The McNemar test gives p = 0.455, so the difference could easily be chance and a larger test set would be needed to be sure. The trade-off is size and speed: B has about 5× more parameters and was 14.7× slower (113.5 ms against 7.7 ms per sentence), and it needs a much larger download. Model A was fine-tuned on SST-2 itself, which helps it on this data, while B was trained on a wider mix of English reviews and may generalise better to other kinds of text. The disagreement table above shows the sentences where the two models differ.
 <!-- DECISION_END -->
 
 ## 6. Limitations and declaration

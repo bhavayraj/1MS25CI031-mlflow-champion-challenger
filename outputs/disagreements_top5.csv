@@ -1,0 +1,6 @@
+sst2_idx,text,reference,pred_A,score_A,pred_B,score_B,comment
+243,the film tunes into a grief that could lead a man across centuries .,POSITIVE,NEGATIVE,0.9631,POSITIVE,0.9988,Only B is right; A gave NEGATIVE with confidence 0.96
+683,true tale of courage -- and complicity -- at auschwitz is a harrowing drama that tries to tell of the unspeakable .,POSITIVE,NEGATIVE,0.6913,POSITIVE,0.9983,Only B is right; A gave NEGATIVE with confidence 0.69
+312,i 'll bet the video game is a lot more fun than the film .,NEGATIVE,POSITIVE,0.9977,NEGATIVE,0.998,Only B is right; A gave POSITIVE with confidence 1.00
+646,"the longer the movie goes , the worse it gets , but it 's actually pretty good in the first few minutes .",NEGATIVE,POSITIVE,0.9996,NEGATIVE,0.9981,Only B is right; A gave POSITIVE with confidence 1.00
+865,"mcconaughey 's fun to watch , the dragons are okay , not much fire in the script .",POSITIVE,POSITIVE,0.7078,NEGATIVE,0.9977,Only A is right; B gave NEGATIVE with confidence 1.00

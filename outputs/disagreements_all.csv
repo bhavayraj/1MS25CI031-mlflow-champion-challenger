@@ -1,0 +1,17 @@
+sst2_idx,text,reference,pred_A,score_A,pred_B,score_B,comment
+243,the film tunes into a grief that could lead a man across centuries .,POSITIVE,NEGATIVE,0.9631,POSITIVE,0.9988,Only B is right; A gave NEGATIVE with confidence 0.96
+683,true tale of courage -- and complicity -- at auschwitz is a harrowing drama that tries to tell of the unspeakable .,POSITIVE,NEGATIVE,0.6913,POSITIVE,0.9983,Only B is right; A gave NEGATIVE with confidence 0.69
+312,i 'll bet the video game is a lot more fun than the film .,NEGATIVE,POSITIVE,0.9977,NEGATIVE,0.998,Only B is right; A gave POSITIVE with confidence 1.00
+646,"the longer the movie goes , the worse it gets , but it 's actually pretty good in the first few minutes .",NEGATIVE,POSITIVE,0.9996,NEGATIVE,0.9981,Only B is right; A gave POSITIVE with confidence 1.00
+865,"mcconaughey 's fun to watch , the dragons are okay , not much fire in the script .",POSITIVE,POSITIVE,0.7078,NEGATIVE,0.9977,Only A is right; B gave NEGATIVE with confidence 1.00
+21,the iditarod lasts for days - this just felt like it did .,NEGATIVE,NEGATIVE,0.9552,POSITIVE,0.9969,Only A is right; B gave POSITIVE with confidence 1.00
+260,"/ but daphne , you 're too buff / fred thinks he 's tough / and velma - wow , you 've lost weight !",NEGATIVE,NEGATIVE,0.9993,POSITIVE,0.9875,Only A is right; B gave POSITIVE with confidence 0.99
+274,"it 's hard to like a film about a guy who is utterly unlikeable , and shiner , starring michael caine as an aging british boxing promoter desperate for a taste of fame and fortune , is certainly that .",NEGATIVE,POSITIVE,0.9963,NEGATIVE,0.9949,Only B is right; A gave POSITIVE with confidence 1.00
+218,"all that 's missing is the spontaneity , originality and delight .",NEGATIVE,NEGATIVE,0.8283,POSITIVE,0.9868,Only A is right; B gave POSITIVE with confidence 0.99
+248,"a full world has been presented onscreen , not some series of carefully structured plot points building to a pat resolution .",POSITIVE,NEGATIVE,0.9622,POSITIVE,0.9988,Only B is right; A gave NEGATIVE with confidence 0.96
+107,what the director ca n't do is make either of val kilmer 's two personas interesting or worth caring about .,NEGATIVE,POSITIVE,0.941,NEGATIVE,0.9995,Only B is right; A gave POSITIVE with confidence 0.94
+253,"if you believe any of this , i can make you a real deal on leftover enron stock that will double in value a week from friday .",NEGATIVE,NEGATIVE,0.9888,POSITIVE,0.9776,Only A is right; B gave POSITIVE with confidence 0.98
+850,"miller is playing so free with emotions , and the fact that children are hostages to fortune , that he makes the audience hostage to his swaggering affectation of seriousness .",POSITIVE,POSITIVE,0.9954,NEGATIVE,0.9995,Only A is right; B gave NEGATIVE with confidence 1.00
+724,it 's everything you do n't go to the movies for .,NEGATIVE,POSITIVE,0.9987,NEGATIVE,0.9967,Only B is right; A gave POSITIVE with confidence 1.00
+395,another in-your-face wallow in the lower depths made by people who have never sung those blues .,NEGATIVE,POSITIVE,0.7811,NEGATIVE,0.9994,Only B is right; A gave POSITIVE with confidence 0.78
+356,"jason x is positively anti-darwinian : nine sequels and 400 years later , the teens are none the wiser and jason still kills on auto-pilot .",NEGATIVE,POSITIVE,0.9716,NEGATIVE,0.9988,Only B is right; A gave POSITIVE with confidence 0.97
