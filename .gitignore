@@ -1,0 +1,16 @@
+# MLflow tracking data and model files (not uploaded, as required)
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow_server*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Hugging Face model files
+*.bin
+*.safetensors
+hf_cache/

@@ -1,0 +1,8 @@
+mlflow==3.18.0
+transformers>=4.44,<5
+torch>=2.3
+datasets>=2.20
+scikit-learn>=1.4
+pandas>=2.0
+matplotlib>=3.8
+playwright>=1.45

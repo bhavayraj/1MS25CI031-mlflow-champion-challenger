@@ -1,0 +1,9 @@
+text,expected
+The hostel mess finally served hot food today and it was actually tasty.,POSITIVE
+The Wi-Fi in the library kept disconnecting during my online quiz.,NEGATIVE
+Our lab instructor explained MLflow so clearly that everything made sense.,POSITIVE
+I waited forty minutes for the college bus and it never came.,NEGATIVE
+The new laptop boots in seconds and the battery lasts the whole day.,POSITIVE
+The movie had a great cast but the story was boring and far too long.,NEGATIVE
+I was nervous about the viva but the examiner was kind and patient.,POSITIVE
+The delivery app charged me twice and support has not replied in three days.,NEGATIVE

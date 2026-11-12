@@ -1,0 +1,16 @@
+{
+  "written_before_final_run": true,
+  "primary_metric": "macro_f1",
+  "primary_metric_direction": "higher_is_better",
+  "margin_pct_points": 2.0,
+  "tie_breaker": "If the Challenger does not beat the Champion by at least the margin, the Champion stays (it is the smaller and faster model).",
+  "latency_guardrail_ms": 250,
+  "latency_guardrail": "Reject the Challenger if its average latency is above 250 ms per sentence on the same machine, even if it wins on macro-F1.",
+  "secondary_metrics": {
+    "accuracy": "higher_is_better",
+    "precision_macro": "higher_is_better",
+    "recall_macro": "higher_is_better",
+    "avg_latency_ms": "lower_is_better",
+    "total_inference_s": "lower_is_better"
+  }
+}
